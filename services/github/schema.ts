@@ -1,0 +1,52 @@
+import { z } from 'zod';
+
+export type GithubPublicUser = z.infer<typeof githubPublicUserSchema>;
+
+export const githubPublicUserSchema = z.object({
+  avatarUrl: z.string().url(),
+  bio: z.string().nullable(),
+  blog: z.string().nullable(),
+  collaborators: z.number().int().optional(),
+  company: z.string().nullable(),
+  createdAt: z.string().datetime(),
+  diskUsage: z.number().int().optional(),
+  email: z.string().email().nullable(),
+  eventsUrl: z.string(),
+  followersUrl: z.string().url(),
+  followers: z.number().int(),
+  followingUrl: z.string(),
+  following: z.number().int(),
+  gistsUrl: z.string(),
+  gravatarId: z.string().nullable(),
+  hireable: z.boolean().nullable(),
+  htmlUrl: z.string().url(),
+  id: z.number().int(),
+  location: z.string().nullable(),
+  login: z.string(),
+  name: z.string().nullable(),
+  nodeId: z.string(),
+  organizationsUrl: z.string().url(),
+  ownedPrivateRepos: z.number().int().optional(),
+  plan: z
+    .object({
+      collaborators: z.number().int(),
+      name: z.string(),
+      space: z.number().int(),
+      privateRepos: z.number().int(),
+    })
+    .optional(),
+  privateGists: z.number().int().optional(),
+  publicGists: z.number().int(),
+  publicRepos: z.number().int(),
+  receivedEventsUrl: z.string().url(),
+  reposUrl: z.string().url(),
+  siteAdmin: z.boolean(),
+  starredUrl: z.string(),
+  subscriptionsUrl: z.string().url(),
+  suspendedAt: z.string().datetime().nullable(),
+  totalPrivateRepos: z.number().int().optional(),
+  twitterUsername: z.string().nullable().optional(),
+  type: z.string(),
+  updatedAt: z.string().datetime(),
+  url: z.string().url(),
+});

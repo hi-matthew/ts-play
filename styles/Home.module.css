@@ -8,7 +8,7 @@
 }
 
 .description {
-  display: inherit;
+  display: unset;
   justify-content: inherit;
   align-items: inherit;
   font-size: 0.85rem;
@@ -97,7 +97,7 @@
 
 .center::before,
 .center::after {
-  content: '';
+  content: "";
   left: 50%;
   position: absolute;
   filter: blur(45px);
@@ -125,7 +125,7 @@
 
 .thirteen::before,
 .thirteen::after {
-  content: '';
+  content: "";
   position: absolute;
   z-index: -1;
 }
